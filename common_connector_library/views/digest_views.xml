@@ -37,7 +37,7 @@
             <xpath expr="//page[@name='connector_kpis']" position="attributes">
                 <attribute name="attrs">{'invisible':[('is_connector_digest','=',False)]}</attribute>
             </xpath>
-            <xpath expr="//page[@name='how_to']" position="attributes">
+            <xpath expr="//page[@name='connector_kpis']" position="attributes">
                 <attribute name="attrs">{'invisible':[('is_connector_digest','=',True)]}</attribute>
             </xpath>
         </field>
