@@ -13,7 +13,7 @@ from io import StringIO, BytesIO
 
 from odoo import api, models, fields, _
 from odoo.exceptions import UserError, ValidationError
-from odoo.addons.website.tools import get_video_embed_code
+# from odoo.addons.website.tools import get_video_embed_code
 from odoo.tools.misc import split_every
 
 _logger = logging.getLogger("WooCommerce")
@@ -86,7 +86,7 @@ class WooProcessImportExport(models.TransientModel):
     @api.depends('woo_video_url')
     def _compute_woo_video_embed_code(self):
         for image in self:
-            image.woo_video_embed_code = get_video_embed_code(image.woo_video_url)
+            image.woo_video_embed_code = False
 
     @api.constrains('orders_after_date', 'orders_before_date', 'products_after_date', 'products_before_date')
     def _check_order_after_before_date(self):
