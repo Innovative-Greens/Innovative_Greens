@@ -27,7 +27,7 @@ class StockPicking(models.Model):
                 order.validate_and_paid_invoices_ept(work_flow_process_record)
         return result
 
-    @api.depends('move_lines.state', 'move_lines.date', 'move_type')
+    @api.depends('move_line_ids.state', 'move_line_ids.date', 'move_type')
     def _compute_scheduled_date(self):
         for picking in self:
             carrier_id = picking.carrier_id
@@ -36,7 +36,7 @@ class StockPicking(models.Model):
                 order_date = fields.Datetime.from_string(order.date_order)
                 picking.scheduled_date = order_date + timedelta(days=carrier_id.on_time_shipping or 0.0)
             else:
-                moves_dates = picking.move_lines.filtered(lambda move: move.state not in ('done', 'cancel')).mapped(
+                moves_dates = picking.move_line_ids.filtered(lambda move: move.state not in ('done', 'cancel')).mapped(
                     'date')
                 if picking.move_type == 'direct':
                     picking.scheduled_date = min(moves_dates, default=picking.scheduled_date or fields.Datetime.now())
