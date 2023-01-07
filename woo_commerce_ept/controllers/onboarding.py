@@ -34,8 +34,8 @@ class WooCommerceOnboarding(http.Controller):
         hide_panel = company.woo_onboarding_toggle_state != 'open'
         btn_value = 'Create more woo instance' if hide_panel else 'Hide On boarding Panel'
 
-        return {
-            'html': request.env.ref('woo_commerce_ept.woo_instances_onboarding_panel_ept')._render({
+        return {  
+            'html': request.env['ir.qweb']._render('woo_commerce_ept.woo_instances_onboarding_panel_ept', {
                 'company': company,
                 'toggle_company_id': company.id,
                 'hide_panel': hide_panel,
@@ -43,4 +43,6 @@ class WooCommerceOnboarding(http.Controller):
                 'state': company.get_and_update_woo_instances_onboarding_state(),
                 'is_button_active': company.is_create_woo_more_instance
             })
+
+
         }
