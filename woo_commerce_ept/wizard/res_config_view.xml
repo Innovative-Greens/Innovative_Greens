@@ -576,9 +576,9 @@
                                     </div>
                                 </div>
                             </div>
-<!--                             <div class="col-xs-12 col-md-6 o_setting_box" groups="analytic.group_analytic_tags">
+                            <div class="col-xs-12 col-md-6 o_setting_box" groups="analytic.group_analytic_tags">
                                 <div class="o_setting_right_pane">
-                                    <label for="woo_analytic_tag_ids" string="Analytic Tags"/>
+<!--                                     <label for="woo_analytic_tag_ids" string="Analytic Tags"/> -->
                                     <div class="text-muted">
                                         Set the Analytic tags for WooCommerce orders.
                                         <li>
@@ -592,12 +592,12 @@
                                     </div>
                                     <div class="content-group">
                                         <div class="mt16">
-                                            <field name="woo_analytic_tag_ids" class="o_light_label"
+<!--                                             <field name="woo_analytic_tag_ids" class="o_light_label"
                                                    widget="many2many_tags"
-                                                   options="{'no_create':True,'no_create_edit': True}"/>
+                                                   options="{'no_create':True,'no_create_edit': True}"/> -->
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
 
                             <div class="col-12 col-lg-6 o_setting_box">
