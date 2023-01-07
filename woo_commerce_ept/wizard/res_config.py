@@ -5,7 +5,7 @@ import logging
 import requests
 from odoo import models, fields, api, _, SUPERUSER_ID
 from odoo.addons.base.models.res_partner import _tz_get
-from odoo.addons.website.tools import get_video_embed_code
+# from odoo.addons.website.tools import get_video_embed_code
 from odoo.exceptions import UserError
 
 from .. import woocommerce
@@ -59,7 +59,7 @@ class WooInstanceConfig(models.TransientModel):
     @api.depends('woo_instance_video_url')
     def _compute_woo_instance_video_embed_code(self):
         for image in self:
-            image.woo_instance_video_embed_code = get_video_embed_code(image.woo_instance_video_url)
+            image.woo_instance_video_embed_code = False
 
     def woo_test_connection(self):
         """
