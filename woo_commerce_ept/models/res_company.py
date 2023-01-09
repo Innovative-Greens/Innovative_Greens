@@ -47,7 +47,7 @@ class ResCompany(models.Model):
             'woo_financial_status_onboarding_state',
             'woo_cron_configuration_onboarding_state',
         ]
-        return self.get_and_update_onbarding_state('woo_onboarding_state', steps)
+        return self._get_and_update_onboarding_state('woo_onboarding_state', steps)
 
     def action_toggle_woo_instances_onboarding_panel(self):
         """
